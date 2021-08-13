@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
 app.get('/products/:productId', async (req, res) => {
     const { productId } = req.params;
     const { api_key } = req.query;
+    //api_key = '1494a940dcb3dc7ba2d094b894b1d6a3';
 
     try {
         const response = await request(`${returnScraperApiUrl(api_key)}&url=https://www.amazon.com/dp/${productId}`);
@@ -31,7 +32,8 @@ app.get('/products/:productId', async (req, res) => {
 app.get('/products/:productId/reviews', async (req, res) => {
     const { productId } = req.params;
     const { api_key } = req.query;
-    
+    //api_key = '1494a940dcb3dc7ba2d094b894b1d6a3';
+
     try {
         const response = await request(`${returnScraperApiUrl(api_key)}&url=https://www.amazon.com/product-reviews/${productId}`);
         
@@ -45,7 +47,8 @@ app.get('/products/:productId/reviews', async (req, res) => {
 app.get('/products/:productId/offers', async (req, res) => {
     const { productId } = req.params;
     const { api_key } = req.query;
-    
+    //api_key = '1494a940dcb3dc7ba2d094b894b1d6a3';
+
     try {
         const response = await request(`${returnScraperApiUrl(api_key)}&url=https://www.amazon.com/gp/offer-listing/${productId}`);
         
@@ -60,6 +63,8 @@ app.get('/search/:searchQuery', async (req, res) => {
     const { searchQuery } = req.params;
     const { api_key } = req.query;
     
+    //api_key = '1494a940dcb3dc7ba2d094b894b1d6a3';
+
     try {
         const response = await request(`${returnScraperApiUrl(api_key)}&url=https://www.amazon.com/s?k=${searchQuery}`);
         
